@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT: DISCOVERY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Intro Screen / Start Menu -->
+    <div id="introScreen" class="screen">
+        <div id="terminal"></div>
+        <div id="asciiArt" class="hidden"></div>
+        <div id="menuOptions" class="hidden">
+            <button id="singlePlayerBtn" class="menu-btn">SINGLE PLAYER</button>
+            <button id="multiPlayerBtn" class="menu-btn">MULTIPLAYER</button>
+            <button id="createRoomBtn" class="menu-btn hidden">CREATE ROOM</button>
+            <button id="joinRoomBtn" class="menu-btn hidden">JOIN ROOM</button>
+            <input type="text" id="roomCodeInput" class="hidden" placeholder="Enter 5-digit room code" maxlength="5">
+            <button id="confirmJoinBtn" class="menu-btn hidden">CONFIRM JOIN</button>
+            <div id="roomCodeDisplay" class="hidden">Room Code: <span id="roomCode"></span></div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen hidden">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-section">
+                <div class="hud-item">CREDITS: <span id="credits">0</span></div>
+                <div class="hud-item">SALARY: <span id="salary">0</span></div>
+                <div class="hud-item">PLANETS: <span id="planetsFound">0</span></div>
+            </div>
+            <div class="hud-section">
+                <div class="hud-item">HEALTH: <span id="health">100</span></div>
+                <div class="hud-item">ENERGY: <span id="energy">100</span></div>
+                <div class="hud-item">NITRO: <span id="nitro">100</span>%</div>
+            </div>
+            <div class="hud-section">
+                <div class="hud-item">DAY: <span id="dayCounter">1</span></div>
+                <div class="hud-item">TIME: <span id="gameTime">06:00</span></div>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Upgrade Shop -->
+        <div id="upgradeShop" class="hidden">
+            <h3>UPGRADE STATION</h3>
+            <div class="upgrade-item">
+                <button id="batteryUpgrade" class="upgrade-btn">BATTERY CORE (+15 Energy, Slower Usage) - 500 Credits</button>
+            </div>
+            <div class="upgrade-item">
+                <button id="thrusterUpgrade" class="upgrade-btn">THRUSTER SYSTEM (+25% Speed) - 750 Credits</button>
+            </div>
+            <div class="upgrade-item">
+                <button id="radarUpgrade" class="upgrade-btn">RADAR ENHANCEMENT (+250m Range) - 1000 Credits</button>
+            </div>
+            <button id="closeShop" class="upgrade-btn">CLOSE</button>
+        </div>
+
+        <!-- Death Screen -->
+        <div id="deathScreen" class="hidden">
+            <h2>MISSION FAILED</h2>
+            <p>Explorer terminated. Respawning...</p>
+            <button id="respawnBtn" class="menu-btn">RESPAWN</button>
+        </div>
+    </div>
+
+    <!-- Bloom Effect Container -->
+    <div class="bloom-overlay"></div>
+
+    <script src="audio.js"></script>
+    <script src="intro.js"></script>
+    <script src="game.js"></script>
+    <script src="multiplayer.js"></script>
+    <script src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
